@@ -1,0 +1,199 @@
+/*menu with jquery.horizontalNav.js*/
+
+nav { 
+	display: block;
+	z-index: 11;
+	float: right;
+}
+
+.sf-menu { margin-right: 18px; padding-bottom: 30px; min-height: 58px;}
+.sf-menu > li > span {display: block; position: relative;}
+.sf-menu ul {position:absolute; top:-999px; display:none; }/*offset of submenus need to match (see below)*/
+.sf-menu li { padding-left:0px;background: none; position: static;}
+	.sf-menu a {
+		display: block;
+		text-decoration: none;
+		color: #fff;
+		font-family: 'Open Sans', sans-serif;
+	}
+		.sf-menu a:hover {text-decoration: none;}
+		.sf-menu li:hover span {color:#272727;}
+
+/*================================>> 1 Level <<========================================*/
+
+/*li.sfHover {position: relative;}*/
+.sf-menu > li > a {
+	display:block;
+	line-height: 18px;
+	font-size: 12px;
+	color: #fff;
+	-moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease;
+	z-index: 100;
+	text-transform: uppercase;
+}
+.sf-menu > li {
+	display: block;
+	position: relative;
+	float: left;
+	margin: 38px 0px 0 42px;
+}
+
+	.sf-menu > li:hover > a, 
+	.sf-menu > li.current > a, 
+	.sf-menu > li.sfHover > a,
+	.sf-menu > li:hover > span, 
+	.sf-menu > li.current > span, 
+	.sf-menu > li.sfHover > span {
+		border-bottom: 2px solid #fff;
+	}
+
+.sf-menu > li > a.sf-with-ul:after {
+	position: absolute;
+	display: block;
+	content:"\f107";
+	left: 0px;
+	right: 0;
+	text-align: center;
+	bottom: -12px;
+	-moz-transition: top 0.3s ease-out;
+    -o-transition: top 0.3s ease-out;
+    -webkit-transition: top 0.3s ease-out;
+	overflow: hidden;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 15px;
+}
+
+
+/*================================>> 2 Level <<========================================*/
+.sf-menu > li > ul, 
+.sf-menu > li.sfHover > ul {
+	top: 50px;
+	left: 0px;
+	width: 140px;
+	z-index:99;
+	background: #101112;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 24px;
+	padding-left: 15px;
+	padding-right: 19px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.sf-menu > li > ul > li {height: auto; border: none; margin: 0px 0px;width: auto;}
+
+.sf-menu > li > ul > li > a {
+	display: block;
+	border-bottom: 1px solid #101112;
+	font-size: 12px;
+	line-height: 29px;
+	color: #fff;
+	position: relative;
+}
+.sf-menu li li a:hover, 
+.sf-menu li.sfHover li.sfHover > a,
+.sf-menu li.sfHover li.sfHover span { 
+	border-bottom: 1px solid #fff;
+}
+
+.sf-menu li li.sfHover { background: inherit;}
+
+.sf-menu > li > ul > li > a.sf-with-ul:after  {
+	position: absolute;
+	display: block;
+	content:"\f107";
+	right: 0px;
+	text-align: center;
+	margin-left: -10px;	
+	top: 8px;
+	-moz-transition: top 0.3s ease-out;
+    -o-transition: top 0.3s ease-out;
+    -webkit-transition: top 0.3s ease-out;
+	overflow: hidden;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 15px;
+}
+.sf-menu > li > ul > li > a.sf-with-ul:hover:after  { color: #fff;}
+/*================================>> 3 Level <<========================================*/
+
+.sf-menu li li ul {
+	top: 0px;
+	left: 141px;
+	width: 103px;
+	z-index:999;
+	background: #101112;
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 24px;
+	padding-left: 17px;
+	padding-right: 19px;
+}
+
+.sf-menu li li li {height: auto; border: none; margin: 0px 0px;width: auto;}
+.sf-menu li li li a {
+	display: block;
+	border-bottom: 1px solid #101112;
+	font-size: 12px;
+	line-height: 29px;
+	color: #fff;
+}
+.sf-menu li li li a:hover {	border-bottom: 1px solid #fff;}
+.sf-menu > li > li.sfHover > span {}
+
+.sf-menu > li > ul > li > a > span { top: 8px; right: 6px;}
+
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+
+
+@media only screen and (max-width: 995px) {
+		.sf-menu > li { margin: 38px 0px 0 22px;}
+}
+@media only screen and (max-width: 795px) {
+
+}
+@media only screen and (max-width: 767px) {
+	nav {margin-bottom: 0px;padding-bottom: 0px;margin-top: 0px;}
+	.sf-menu { display:none !important;}
+
+	nav select {
+		height: 35px;
+		border: 1px solid #fff;
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		line-height: 20px;
+		color: #000;
+		background-color: #fff;
+		width: 100%;
+	    outline: none;
+	    padding: 5px;
+		font-weight: normal;
+		margin-top: 31px;
+		margin-bottom: 20px;
+	}
+	nav select option:first-child {
+		color:#20201f;
+	}
+	h1, nav { float: none;}
+}
+
+@media only screen and (max-width: 479px) {
+}
